@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <title>차곡퀴즈 — 나만의 학습 문제</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="차곡퀴즈 홈"><span class="brand-mark">✳</span> 차곡퀴즈</a>
+      <span class="header-note">나를 위한 작은 학습 습관</span>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow"><span></span> AI QUIZ GENERATOR</div>
+      <h1>배운 내용을<br> <em>차곡차곡,</em><br> 내 것으로.</h1>
+      <p>공부한 과목과 단원만 알려주세요.<br>나에게 꼭 맞는 연습 문제가 만들어져요.</p>
+      <div class="intro-bottom"><span class="spark">✽</span><span>오늘의 배움이<br><strong>내일의 자신감으로</strong></span></div>
+    </section>
+    <section class="workspace" aria-label="퀴즈 만들기">
+      <div class="card form-card">
+        <div class="card-heading"><div><span class="step">01 / 시작하기</span><h2>어떤 내용을 공부했나요?</h2><p>학습한 내용을 입력하고 퀴즈를 만들어 보세요.</p></div><span class="heading-icon" aria-hidden="true">✦</span></div>
+        <form id="quiz-form" novalidate>
+          <div class="field-grid">
+            <label>과목 <span class="required">*</span><input id="subject" name="subject" type="text" maxlength="100" placeholder="예: 과학" required></label>
+            <label>단원명 <span class="required">*</span><input id="unit" name="unit" type="text" maxlength="100" placeholder="예: 태양계와 별" required></label>
+          </div>
+          <fieldset>
+            <legend>문제 유형 <span class="required">*</span></legend>
+            <div class="type-grid">
+              <label class="type-option"><input type="radio" name="type" value="multiple" checked><span><b>☷</b><strong>객관식</strong><small>선택지에서 정답 찾기</small></span></label>
+              <label class="type-option"><input type="radio" name="type" value="short"><span><b>✎</b><strong>주관식</strong><small>직접 답을 떠올리기</small></span></label>
+            </div>
+          </fieldset>
+          <label class="count-label" for="count">문제 수 <span>1~10개</span></label>
+          <div class="count-control"><input id="count" name="count" type="number" min="1" max="10" step="1" value="5" required><span>문제</span></div>
+          <p id="error" class="error" role="alert" hidden></p>
+          <button class="generate" id="submit" type="submit"><span>퀴즈 만들기</span><span aria-hidden="true">→</span></button>
+          <p id="loading" class="loading" role="status" hidden>문제를 만들고 있어요. 잠시만 기다려 주세요.</p>
+        </form>
+      </div>
+      <section id="results" class="results" aria-labelledby="results-title" hidden>
+        <div class="results-heading"><div><span class="step">02 / 학습하기</span><h2 id="results-title">퀴즈가 준비됐어요!</h2><p id="results-meta"></p></div><span class="result-badge">QUIZ TIME ✳</span></div>
+        <div id="questions"></div>
+      </section>
+      <p class="disclaimer">✦ AI가 만든 문제는 오류가 있을 수 있어요. 중요한 내용은 교과서와 함께 확인해 주세요.</p>
+    </section>
+  </main>
+  <footer>차곡퀴즈 <span>·</span> 매일 조금씩, 더 단단하게</footer>
+</body>
+</html>
