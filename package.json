@@ -1,0 +1,13 @@
+{
+  "name": "quiz-generator",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --env-file=env_local.txt server.js",
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
